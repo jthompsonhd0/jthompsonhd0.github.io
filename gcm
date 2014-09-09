@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Go to the Git dir
+cd ~/Documents/Git/
+
+# Add the changes
+git add -A
+
+# Commit with message
+git commit -m "$1"
