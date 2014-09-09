@@ -214,6 +214,10 @@ void drawPoints(){
     
 }
 
+// I'm going to make a change here.
+// Add a few lines.
+// See what happens
+
 void display(){
     
     preProcessEvents();
