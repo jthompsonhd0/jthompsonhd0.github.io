@@ -1,0 +1,65 @@
+#!/bin/bash
+
+echo
+echo
+echo "*******************************************"
+echo "                 OPTIONS                   "
+echo "*******************************************"
+echo
+echo "1. Clone existing branch "
+echo 
+echo "2. Make a new remote & new branch "
+echo
+echo "3. Add all, commit, and push "
+echo
+echo "Enter a number: "
+read option
+
+if [ $option == 1 ]; then
+	echo "Enter: [branchName] [username/repo]"
+	read bN uR 
+	echo "Changing directory to Desktop"
+	cd ~/Desktop/
+	echo "Cloning $bN from %uR"
+	git clone -b $bN https://github.com/$uR.git
+	echo "Done."
+elif [ $option == 2 ]; then
+	echo "Calling 'git init'"
+	git init
+	echo "Adding everything in current directory"
+	git add -A
+	echo "Enter commit message as a string:   \"Your message\""
+	read cmtMsg
+	git commit -m "$cmtMsg"
+	echo "Enter: [newRemoteName] [username/repo] [newBranchName]"
+	read nRN uNR nBN
+	echo "Adding remote, $nRN"
+	git remote add $nRN https://github.com/$uNR.git
+	echo "Checking out new branch, $nBN"
+	git checkout -b $nBN
+	echo "Pushing as $nBN"
+	git push -u $nRN $nBN
+	echo "Done."
+elif [ $option == 3 ]; then
+	echo "Calling 'git init'"
+	git init
+	echo "Adding everything in current directory"
+	git add -A
+	echo "Enter commit message as a string:   \"Your message\""
+	read cmtM
+	git commit -m "$cmtM"
+	echo "Enter: [branchName]"
+	git push -u $BN
+else
+	echo "Not a valid entry."
+fi	
+
+
+
+
+
+
+
+
+
+
