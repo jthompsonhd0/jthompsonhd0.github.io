@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# our convention will be to clone the Home folder to Desktop
+echo "Changing to ~/Desktop/"
+cd ~/Desktop/
+
+# We select the branch gh-pages, because that's the website branch
+git clone -b gh-pages https://github.com/justinthompson593/Home.git
+
+

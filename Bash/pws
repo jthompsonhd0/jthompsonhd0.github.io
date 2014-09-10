@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# By convention, this is the name and directory
+cd ~/Desktop/Home/
+
+# Add all the changes you made
+git add -A
+
+# Commit
+echo "Enter commit message as a string"
+read cmtM
+git commit -m "$cmtM"
+
+# Push with gh-pages
+git push -u origin gh-pages
